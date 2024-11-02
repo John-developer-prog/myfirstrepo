@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="web.css">
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 mb-3" style="height: 100vh; background: black;">
+                <h1 class="text-white text-center py-5 fw-bolder">Admin@ DashBoard</h1>
+                <div class="a mt-3 lg-5 mb-5">
+                   <a href="#" class="text-white fw-bolder fs-4" style="text-decoration: none;"><a href="https://yourwebsite.com/block" target="_self" aria-label="Block Action" style="color: white; text-decoration: none; font-size: 15px;">
+                    <i class="fas fa-ban fa-2x"></i> Bloque
+                </a></a>
+                </div>
+                <div class="dash  mb-5">
+                    <a href="#" class="text-white fw-bolder fs-4" style="text-decoration: none;"><a href="https://yourwebsite.com/dashboard" target="_self" aria-label="View Dashboard" style="color: white; text-decoration: none; font-size: 15px;">
+                        <i class="fas fa-tachometer-alt fa-2x"></i> User DashBoard
+                    </a> </a>
+                </div>
+                <div class="user  mb-5">
+                    <a href="#" class="text-white fw-bolder fs-4" style="text-decoration: none;"><a href="https://yourwebsite.com/profile" target="_self" aria-label="View Profile" style="color: white; text-decoration: none; font-size: 15px;">
+                        <i class="fas fa-user fa-2x"></i> Profile
+                    </a> </a>
+                </div>
+                <div class="set mb-5">
+                    <a href="#" class="text-white fw-bolder fs-4" style="text-decoration: none;"><a href="https://yourwebsite.com/settings" target="_self" aria-label="Settings" style="color: white; text-decoration: none; font-size: 15px;">
+                        <i class="fas fa-cog fa-2x"></i> Settings
+                    </a> </a>
+                </div>
+                <div class="cal mb-5">
+                    <a href="#" class="text-white fw-bolder fs-4" style="text-decoration: none;"><a href="https://yourwebsite.com/calendar" target="_self" aria-label="View Calendar" style="color: white; text-decoration: none; font-size: 15px;">
+                        <i class="fas fa-calendar-alt fa-2x"></i> Calendar
+                    </a> </a>
+                </div>
+                <div class="rep py-3">
+                    <a href="#" class="text-white fw-bolder fs-4" style="text-decoration: none;"><a href="https://yourwebsite.com/report" target="_self" aria-label="View Report" style="color: white; text-decoration: none; font-size: 15px;">
+                        <i class="fas fa-file-alt fa-2x"></i> Report
+                    </a> </a>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="header w-100" style="box-shadow: 0px 2px 5px rgba(0, 0, 0, 2);">
+                    <h5 class="px-5 py-4 text-center fw-bolder text-danger" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">MCC admin@ e-portal | 2024 &copy;</h5>
+                </div>
+                <h4 class="text-center fw-bolder py-5">Admin Annual Income Graph</h4>
+                <canvas id="myLineChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the canvas element
+        const ctx = document.getElementById('myLineChart').getContext('2d');
+
+        // Create a new line chart
+        const myLineChart = new Chart(ctx, {
+            type: 'line', // Specify the chart type
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], // X-axis labels
+                datasets: [{
+                    label: 'Monthly Income', // Dataset label
+                    data: [65, 59, 80, 81, 56, 55, 40], // Y-axis data points
+                    fill: true, // No fill under the line
+                    borderColor: 'rgb(75, 192, 192)', // Line color
+                    tension: 0.1 // Line tension (curvature)
+                }]
+            },
+            options: {
+                responsive: true, // Responsive chart
+                scales: {
+                    y: {
+                        beginAtZero: true // Start the Y-axis at zero
+                    }
+                }
+            }
+        });
+    </script>
+    </body>
+    </html>
